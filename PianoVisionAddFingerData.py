@@ -9,7 +9,7 @@ import json
 import xml.etree.ElementTree as ET
 
 # Opening JSON file
-f = open('inputjson.json')
+f = open('input.json')
 # returns JSON object as 
 # a dictionary
 data = json.load(f)
@@ -207,7 +207,8 @@ for i in range(len(data['tracksV2']['left'])):
             if(xmlNote3.pitch == k.pitch and str(xmlNote3.octave) == str(k.octave) and str(xmlNote3.alter)== str(k.alter)):
                 pass
                 print(k.finger)
-                data['tracksV2']['left'][i]['notes'][j]['finger']=6-int(k.finger)
+                #data['tracksV2']['left'][i]['notes'][j]['finger']=6-int(k.finger)
+                data['tracksV2']['left'][i]['notes'][j]['finger']=int(k.finger)
                 #print(data['tracksV2']['right'][i]['notes'][j]['finger'])
                 toremove=xmlNotesLeftMod.index(k)
                 break        
